@@ -1,7 +1,7 @@
 class Queue:
     def __init__(self, size):
         self.size = size
-        self.queue = [None]
+        self.queue = [None] * size  
         self.front = 0
         self.rear = -1
         self.count = 0
@@ -19,6 +19,7 @@ class Queue:
             print("Queue is empty")
             return None
         obj = self.queue[self.front]
+        self.queue[self.front] = None
         self.front += 1
         self.count -= 1
         return obj
@@ -51,9 +52,8 @@ class Queue:
         print(self.queue)
 
 
-
 class CircularQueue:
-    def init__(self, size):
+    def __init__(self, size):  
         self.size = size
         self.queue = [None] * size
         self.front = 0
@@ -104,7 +104,6 @@ class CircularQueue:
 
     def Display(self):
         print(self.queue)
-
 
 
 if __name__ == "__main__":
